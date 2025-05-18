@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
+import { getRegisterController } from '../controllers/controllers.js';
+
+import ctrlWrapper from '../utils/ctrlWrapper.js';
+
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Hello World' });
-});
+router.get('/register', ctrlWrapper(getRegisterController));
 
 export default router;

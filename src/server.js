@@ -27,6 +27,8 @@ const startServer = () => {
   app.use(cors(corsOption));
   app.use(express.json());
 
+  // app.use('/uploads', express.static('uploads'));
+
   app.use('/api', Router);
 
   app.use(notFoundHundler);
